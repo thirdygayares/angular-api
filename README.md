@@ -1,20 +1,20 @@
 Create folder **components**
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725088482834/e6bcfe9d-b2e2-4819-b455-f999c2ca15fd.png align="left")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725088482834/e6bcfe9d-b2e2-4819-b455-f999c2ca15fd.png)
 
 Generate 4 components
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725088547766/babf3fe3-749d-484f-9e32-86108e3109c0.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725088547766/babf3fe3-749d-484f-9e32-86108e3109c0.png)
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725088870903/3bab5ad5-e3cc-48de-8234-def961e34661.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725088870903/3bab5ad5-e3cc-48de-8234-def961e34661.png)
 
 Move the three folders to the components folder
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725088926182/1918d300-8009-4744-9387-6ac9a79d686c.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725088926182/1918d300-8009-4744-9387-6ac9a79d686c.png)
 
 Add app.module.ts
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725089334004/9f5e3281-34d4-4857-b246-0a2220d47c34.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725089334004/9f5e3281-34d4-4857-b246-0a2220d47c34.png)
 
 Content of app.module.ts
 
@@ -68,7 +68,7 @@ export class AppModule { }
 
 In all components remove standalone: true, imports: \[\],
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725089319825/19acf5ef-a97e-4afe-bf49-7b3c4a9f8286.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725089319825/19acf5ef-a97e-4afe-bf49-7b3c4a9f8286.png)
 
 in main.ts
 
@@ -94,7 +94,7 @@ in app.component.html
 
 # **OUTPUT**
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725096655852/45c6de75-69b3-4d0e-896f-eec0b3ab462d.gif align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725096655852/45c6de75-69b3-4d0e-896f-eec0b3ab462d.gif)
 
 Github link
 
