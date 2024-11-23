@@ -1,0 +1,33 @@
+
+
+
+<h1>Restaurants</h1>
+<div class="container">
+    <div class="items" *ngFor="let restaurant of restaurants">
+     <h1> {{ restaurant.name }}</h1>
+      <p>{{ restaurant.address }}</p>
+      <p>{{ restaurant.description }}</p>
+
+    </div>
+
+</div>
+<table border="1" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Restaurant Name</th>
+      <th>Restaurant UUID</th>
+      <th>Location</th>
+      <th>description</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let restaurant of restaurants">
+
+      <td>{{ restaurant.name }}</td>
+      <td>{{ restaurant.restaurant_uuid }}</td>
+      <td>{{ restaurant.address }}</td>
+      <td>{{ restaurant.description }}</td>
+    </tr>
+  </tbody>

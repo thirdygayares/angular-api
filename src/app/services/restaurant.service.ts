@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {User} from "../model/user";
+import {Restaurant} from "../model/restaurant";
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
-
-  private apiUrl = 'https://testsvfcb.pythonanywhere.com/users';
+export class RestaurantService {
+  private apiUrl = 'https://testsvfcb.pythonanywhere.com/restaurant';
 
   constructor(private http: HttpClient) { }
 
-  getUsers() {
-    return this.http.get<User[]>(this.apiUrl);
-  }
 
+  getRestaurants() {
+    return this.http.get<Restaurant[]>(this.apiUrl);
+  }
 }

@@ -9,6 +9,7 @@ import {provideAnimationsAsync} from "@angular/platform-browser/animations/async
 import {HomepageComponent} from "./components/homepage/homepage.component";
 import {UserComponent} from "./components/user/user.component";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {RestaurantComponent} from "./components/restaurant/restaurant.component";
 
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   // Main layout routes
   { path: '', component: HomepageComponent },
   { path: 'user', component: UserComponent },
+  { path: 'restaurant', component: RestaurantComponent },
 
 ];
 
@@ -34,7 +36,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     UserComponent,
-    HomepageComponent
+    HomepageComponent,
+    RestaurantComponent
 
   ],
   providers: [
