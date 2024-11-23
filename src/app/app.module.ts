@@ -7,8 +7,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AppComponent} from "./app.component";
 import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
 import {HomepageComponent} from "./components/homepage/homepage.component";
-import {LoginComponent} from "./components/login/login.component";
-import {ServicesComponent} from "./components/services/services.component";
+import {UserComponent} from "./components/user/user.component";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 
 
@@ -16,8 +16,8 @@ const routes: Routes = [
 
   // Main layout routes
   { path: '', component: HomepageComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'services', component: ServicesComponent },
+  { path: 'user', component: UserComponent },
+
 ];
 
 @NgModule({
@@ -27,12 +27,14 @@ const routes: Routes = [
     BrowserAnimationsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes, {enableTracing: true}), // Only for debugging purposes
+    HttpClientModule
   ],
   exports: [RouterModule],
 
   declarations: [
     AppComponent,
-
+    UserComponent,
+    HomepageComponent
 
   ],
   providers: [

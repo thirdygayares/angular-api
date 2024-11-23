@@ -1,0 +1,20 @@
+<p>user works!</p>
+
+<table border="1" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>User Name</th>
+      <th>Email</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.user_uuid }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+
+    </tr>
+  </tbody>
+</table>
