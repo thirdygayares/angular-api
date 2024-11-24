@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  padding: 20px;
+  margin: 20px 0px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+table td button {
+  background-color: #980000;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px 10px;
+}
+
+table td button:hover {
+  background-color: #0c92ff;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 10px;
+  padding: 20px 0px;
+  margin: 20px 0px;
+}
+
+nav a {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: darkblue;
+}
+
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+form input, form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #980000;
+  color: white;
+  border: none;
+}
+
+form button:hover {
+  background-color: #0c92ff;
+}

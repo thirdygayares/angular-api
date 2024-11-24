@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule, Routes} from '@angular/router';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from "@angular/common";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AppComponent} from "./app.component";
@@ -29,7 +29,8 @@ const routes: Routes = [
     BrowserAnimationsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes, {enableTracing: true}), // Only for debugging purposes
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   exports: [RouterModule],
 
