@@ -10,6 +10,9 @@ import {HomepageComponent} from "./components/homepage/homepage.component";
 import {UserComponent} from "./components/user/user.component";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {RestaurantComponent} from "./components/restaurant/restaurant.component";
+import {RestaurantCategoryComponent} from "./components/restaurant-category/restaurant-category.component";
+import {MenuComponent} from "./components/menu/menu.component";
+import {MenuCategoryComponent} from "./components/menu-category/menu-category.component";
 
 
 
@@ -19,6 +22,9 @@ const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'user', component: UserComponent },
   { path: 'restaurant', component: RestaurantComponent },
+  { path: 'restaurant-category', component: RestaurantCategoryComponent },
+  { path: 'menu', component: MenuComponent },
+  { path: 'menu-category', component: MenuCategoryComponent }
 
 ];
 
@@ -38,7 +44,10 @@ const routes: Routes = [
     AppComponent,
     UserComponent,
     HomepageComponent,
-    RestaurantComponent
+    RestaurantComponent,
+    RestaurantCategoryComponent,
+    MenuComponent,
+    MenuCategoryComponent
 
   ],
   providers: [
