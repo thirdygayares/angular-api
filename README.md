@@ -11,6 +11,9 @@
 
 [https://github.com/thirdygayares/angular-api](https://github.com/thirdygayares/angular-api)
 
+**API endpoint:**
+[https://testsvfcb.pythonanywhere.com](https://testsvfcb.pythonanywhere.com)
+
 **Project Directory**
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1732462850551/1f393be9-d4ad-406c-a61f-962f9dea68af.png)
