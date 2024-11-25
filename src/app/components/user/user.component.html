@@ -1,33 +1,65 @@
 <p>Manage Users</p>
+<section>
+  <form #userForm="ngForm" (ngSubmit)="createUser(userForm)">
+    <input
+      type="text"
+      name="email"
+      ngModel
+      placeholder="Email"
+      required
+      #email="ngModel"
+    />
+    <div *ngIf="email.invalid && email.touched">Email is required</div>
 
-<form (ngSubmit)="createUser({ email: email.value, username: username.value, role: role.value , password: password.value })">
-  <input type="text" #email placeholder="Email" required/>
-  <input type="text" #username placeholder="Username" required/>
-  <input type="text" #role placeholder="Role" required/>
-  <input type="password" #password placeholder="Password" required/>
-  <button type="submit">Create User</button>
-</form>
+    <input
+      type="text"
+      name="username"
+      ngModel
+      placeholder="Username"
+      required
+      #username="ngModel"
+    />
+    <div *ngIf="username.invalid && username.touched">Username is required</div>
 
-<table border="1" class="table table-striped">
-  <thead>
-  <tr>
-    <th>Id</th>
-    <th>Username</th>
-    <th>Email</th>
-    <th>Actions</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let user of users">
-    <td>{{ user.user_uuid }}</td>
-    <td>{{ user.username }}</td>
-    <td>{{ user.email }}</td>
-    <td>
-      <button (click)="viewUserDetails(user.user_uuid)">View Details</button>
-      <button (click)="updateUser(user.user_uuid, { email: 'new-email@example.com', username: 'new-username', role: 'new-role' })">Update</button>
-      <button (click)="deleteUser(user.user_uuid)">Delete</button>
-    </td>
-  </tr>
-  </tbody>
-</table>
+    <input
+      type="password"
+      name="password"
+      ngModel
+      placeholder="Password"
+      required
+      minlength="6"
+      #password="ngModel"
+    />
+    <div *ngIf="password.invalid && password.touched">
+      Password is required and must be at least 6 characters
+    </div>
 
+    <button type="submit" [disabled]="userForm.invalid">Create User</button>
+  </form>
+
+</section>
+
+<section>
+  <table border="1" class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.user_uuid }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <button (click)="viewUserDetails(user.user_uuid)">View Details</button>
+        <button (click)="updateUser(user.user_uuid, { email: 'new-email@example.com', username: 'new-username', role: 'new-role' })">Update</button>
+        <button (click)="deleteUser(user.user_uuid)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>

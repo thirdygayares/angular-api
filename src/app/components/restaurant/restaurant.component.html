@@ -1,33 +1,107 @@
-
-
-
 <h1>Restaurants</h1>
-<div class="container">
-    <div class="items" *ngFor="let restaurant of restaurants">
-     <h1> {{ restaurant.name }}</h1>
-      <p>{{ restaurant.address }}</p>
-      <p>{{ restaurant.description }}</p>
 
-    </div>
+<!--CREAE RESTAURANT-->
+<form #restaurantForm="ngForm" (ngSubmit)="createRestaurant(restaurantForm)">
+  <input
+    type="text"
+    name="name"
+    ngModel
+    placeholder="Name"
+    required
+    #name="ngModel"
+  />
+  <div *ngIf="name.invalid && name.touched">Name is required</div>
 
-</div>
+  <input
+    type="text"
+    name="address"
+    ngModel
+    placeholder="Address"
+    required
+    #address="ngModel"
+  />
+  <div *ngIf="address.invalid && address.touched">Address is required</div>
+
+  <input
+    type="text"
+    name="phone"
+    ngModel
+    placeholder="Phone"
+    required
+    #phone="ngModel"
+  />
+  <div *ngIf="phone.invalid && phone.touched">Phone is required</div>
+
+  <input
+    type="email"
+    name="email"
+    ngModel
+    placeholder="Email"
+    required
+    #email="ngModel"
+  />
+  <div *ngIf="email.invalid && email.touched">Email is required</div>
+
+  <input
+    type="number"
+    name="user_id"
+    ngModel
+    placeholder="User ID"
+    required
+    #userId="ngModel"
+  />
+  <div *ngIf="userId.invalid && userId.touched">User ID is required</div>
+
+  <input
+    type="number"
+    name="category_id"
+    ngModel
+    placeholder="Category ID"
+    required
+    #categoryId="ngModel"
+  />
+  <div *ngIf="categoryId.invalid && categoryId.touched">Category ID is required</div>
+
+  <input
+    type="text"
+    name="description"
+    ngModel
+    placeholder="Description"
+    required
+    #description="ngModel"
+  />
+  <div *ngIf="description.invalid && description.touched">Description is required</div>
+
+  <button type="submit" [disabled]="restaurantForm.invalid">
+    Create Restaurant
+  </button>
+</form>
+
+
+<section>
 <table border="1" class="table table-striped">
   <thead>
-    <tr>
-      <th>Restaurant Name</th>
-      <th>Restaurant UUID</th>
-      <th>Location</th>
-      <th>description</th>
-
-
-    </tr>
+  <tr>
+    <th>Restaurant Name</th>
+    <th>Restaurant UUID</th>
+    <th>Location</th>
+    <th>Description</th>
+    <th>Actions</th> <!-- Add Actions column -->
+  </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let restaurant of restaurants">
-
-      <td>{{ restaurant.name }}</td>
-      <td>{{ restaurant.restaurant_uuid }}</td>
-      <td>{{ restaurant.address }}</td>
-      <td>{{ restaurant.description }}</td>
-    </tr>
+  <tr *ngFor="let restaurant of restaurants">
+    <td>{{ restaurant.name }}</td>
+    <td>{{ restaurant.restaurant_uuid }}</td>
+    <td>{{ restaurant.address }}</td>
+    <td>{{ restaurant.description }}</td>
+    <td>
+      <!-- Action buttons -->
+      <button (click)="getRestaurantDetails(restaurant.restaurant_uuid)">View</button>
+      <button (click)="updateRestaurant(restaurant.restaurant_uuid, restaurant)">Update</button>
+      <button (click)="deleteRestaurant(restaurant.restaurant_uuid)">Delete</button>
+    </td>
+  </tr>
   </tbody>
+</table>
+</section>

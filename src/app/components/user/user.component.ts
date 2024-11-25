@@ -1,6 +1,7 @@
 import {UserService} from "../../services/user.service";
 import {Component, OnInit} from "@angular/core";
 import {User} from "../../model/user";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-user',
@@ -17,7 +18,6 @@ export class UserComponent implements OnInit {
     this.getUsers();
   }
 
-
   getUsers() {
     this.userService.getUsers().subscribe({
       next: (data) => this.users = data,
@@ -25,20 +25,27 @@ export class UserComponent implements OnInit {
     });
   }
 
-  createUser(user: User) {
-    if (!user.username || !user.email || !user.password || !user.role) {
-      alert('Please fill out all the fields');
+  createUser(form: NgForm) {
+    if (form.invalid) {
+      alert('Please fill out all the fields correctly.');
       return;
     }
+
+    const user: User = {
+      ...form.value,
+      role : 'user'
+    };
+
     this.userService.createUser(user).subscribe({
       next: () => {
         this.getUsers();
-        this.selectedUser = null;
+        form.reset();
         alert('User created successfully');
       },
       error: (err) => {
         console.error(err);
-        alert('There was an error creating the user');}
+        alert('There was an error creating the user. Please check the console.');
+      },
     });
   }
 
