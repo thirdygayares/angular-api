@@ -1,4 +1,3 @@
-In this documentation, We apply the API to the angular
 
 **POSTMAN DOCS**
 
